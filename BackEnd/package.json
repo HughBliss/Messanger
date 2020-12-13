@@ -1,0 +1,12 @@
+{
+  "name": "backend-messanger",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "socket.io": "^3.0.4"
+  }
+}

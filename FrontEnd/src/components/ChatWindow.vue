@@ -11,7 +11,7 @@
       class="newMessageInput"
       @submit.prevent="newItem"
     >
-      <input v-model="inputValue" type="text" class="form-control "
+      <input maxlength="80" v-model="inputValue" type="text" class="form-control "
              placeholder="Ваше сообщение">
       <div class="input-group-append">
         <button class="btn btn-outline-primary" type="submit">Отправить</button>
@@ -39,6 +39,7 @@ export default {
         this.items.push({ message: this.inputValue })
         this.inputValue = ''
         this.$refs.listMessage.scrollTo(0, 999999)
+        this.$socket.emit('message', 'hello')
       }
     }
   }

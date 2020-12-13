@@ -3,7 +3,7 @@
     <button
       v-if="!showChangeForm"
       @click="showChangeForm = true"
-      class="changeText">Изменить
+      class="changeText btn">Изменить
     </button>
     <form
       v-if="showChangeForm"
@@ -40,7 +40,8 @@ export default {
 
 <style scoped>
 .changeText {
-  color: inherit;
+  color: #0d6efd;
+  border-color: #0d6efd;
 }
 
 .changeText:hover {
@@ -53,6 +54,6 @@ export default {
 
 .inpChangeName__input {
   height: 24px;
-  width: 180px
+  width: 180px;
 }
 </style>
