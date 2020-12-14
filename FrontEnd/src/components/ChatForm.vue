@@ -1,7 +1,8 @@
 <template lang="pug">
   form.chat-form(@submit.prevent="handleSubmit")
-    input.chat-form__input(v-model="message")
-    button.chat-form__btn
+    .chat-form__input-wrap
+      input.chat-form__input(v-model="message")
+    button.chat-form__btn.btn.btn--rnd
 </template>
 
 <script>

@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    height: 30px;
+  }
+
+  &__pop-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+}

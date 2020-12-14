@@ -1,7 +1,30 @@
+@import "../vars";
+
 .chat-form {
   position: absolute;
   width: 100%;
   left: 0;
   bottom: 0;
   right: 0;
+  padding: 5px;
+  display: flex;
+
+  &__input {
+    border-radius: 15px;
+    background: $--white;
+    border: none;
+    height: 100%;
+    width: 100%;
+
+    &-wrap {
+      flex: 1;
+      border-radius: 15px;
+      padding: 1.5px;
+      background: $--main-gradient;
+    }
+  }
+
+  &__btn {
+    margin-left: 5px;
+  }
 }

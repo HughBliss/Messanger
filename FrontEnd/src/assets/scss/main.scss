@@ -1,6 +1,6 @@
-$--blue: #69b7eb;
-$--green: #b3dbd3;
-$--pink: #f4d6db;
+@import "vars";
+@import "btn";
+@import "fonts";
 
 * {
   margin: 0;
@@ -14,14 +14,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, $--blue, $--green, $--pink);
+  background: $--main-gradient
 }
 
 .container {
   height: 568px;
   width: 320px;
-  background: #fff;
-  border-radius: 10px;
+  background: $--white;
+  border-radius: 15px;
   overflow: hidden;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -33,3 +33,4 @@ body {
 }
 
 @import "components/chat-form";
+@import "components/header";
