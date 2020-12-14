@@ -1,32 +1,28 @@
-let app = require('express')()
-let http = require('http').Server(app)
-let io = require('socket.io')(http)
-let cors = require('cors')
-let port = 3030
+const express = require('express')
+const bodyParser = require('body-parser')
+const socket = require('socket.io')
+const cors = require('cors')
 
-app.use(cors({
-    origin: 'http://192.168.10.32:8080',
-    credentials:true
-}));
+const port = process.env.APP_PORT || 3000
 
-app.use(function (req, res, next) {
+const app = new express()
+app.use(bodyParser.json())
+app.use(cors())
 
-    res.header('Access-Control-Allow-Origin', "http://localhost:3030");
-    res.header('Access-Control-Allow-Headers', true);
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    next();
-});
-
-io.on('connection', function(socket){
-    console.log('Someone connected')
-    socket.on('message', function(msg){
-        console.log(msg)
-    })
+app.get('/', async (req, res) => {
+    res.send('ok');
 })
 
-app.get('/', () => console.log('hey'))
+var server = app.listen(port, () => {
+    console.log(`I am running at PORT ${port}`)
+})
 
-http.listen(port, function(){
-    console.log('listening on ' + port + ' port')
+const io = socket(server);
+
+io.on("connection", function (socket) {
+    console.log("Socket Connection Established with ID :" + socket.id)
+    socket.on("chat", async function (chat) {
+        chat.created = new Date()
+        socket.emit("chat", chat)
+    })
 })
