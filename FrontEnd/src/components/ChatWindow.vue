@@ -38,6 +38,7 @@ export default {
       if (this.inputValue) {
         this.items.push({ message: this.inputValue })
         this.inputValue = ''
+        this.$refs.listMessage.scrollTo(0, 999999)
         this.$socket.emit('message', 'hello')
       }
     }

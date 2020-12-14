@@ -6,7 +6,6 @@ Vue.use(new VueSocketIO({
   debug: true,
   connection: 'http://localhost:3030'
 }))
-
 new Vue({
   render: h => h(App)
 }).$mount('#app')
