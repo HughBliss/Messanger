@@ -4,12 +4,7 @@ import VueSocketIO from 'vue-socket.io'
 
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: 'http://localhost:3030',
-  vuex: {
-    actionPrefix: 'SOCKET_',
-    mutationPrefix: 'SOCKET_'
-  },
-  options: { path: '/my-app/' }
+  connection: 'http://localhost:3030'
 }))
 
 new Vue({
