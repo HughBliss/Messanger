@@ -1,0 +1,6 @@
+export const WSA_PREF = 'WEB_SOCKET_ACTION_'
+
+export const ADD_MESSAGE = 'ADD_MESSAGE'
+
+export const NEW_MESSAGE = 'NEW_MESSAGE'
+export const WSA_NEW_MESSAGE = WSA_PREF + NEW_MESSAGE

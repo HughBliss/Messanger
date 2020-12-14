@@ -3,16 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueSocketIO from 'vue-socket.io'
-
 import '@/assets/scss/main.scss'
+import { WSA_PREF } from '@/consts'
 
 Vue.use(new VueSocketIO({
   debug: true,
   connection: process.env.VUE_APP_WS,
   vuex: {
     store,
-    actionPrefix: 'WS_',
-    mutationPrefix: 'WS_'
+    actionPrefix: WSA_PREF,
+    mutationPrefix: 'WSM_'
   }
 }))
 

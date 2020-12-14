@@ -19,10 +19,10 @@ var server = app.listen(port, () => {
 
 const io = socket(server);
 
-io.on("connection", function (socket) {
+io.on("connection", (socket) => {
     console.log("Socket Connection Established with ID :" + socket.id)
-    socket.on("chat", async function (chat) {
+    socket.on("NEW_MESSAGE", (chat) => {
         chat.created = new Date()
-        socket.emit("chat", chat)
+        socket.emit("NEW_MESSAGE", chat)
     })
 })
