@@ -1,20 +1,14 @@
-<template>
-  <div class="home">
-    <button @click="testMessage">test message</button>
-  </div>
+<template lang="pug">
+  .container
+    ChatForm
 </template>
 
 <script>
-
-import { NEW_MESSAGE } from '@/consts'
+import ChatForm from '@/components/ChatForm'
 
 export default {
   name: 'Home',
-  components: {},
-  methods: {
-    testMessage () {
-      this.$socket.emit(NEW_MESSAGE, { message: 'test' })
-    }
-  }
+  components: { ChatForm },
+  methods: {}
 }
 </script>

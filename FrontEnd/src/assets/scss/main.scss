@@ -1,5 +1,35 @@
-*{
+$--blue: #69b7eb;
+$--green: #b3dbd3;
+$--pink: #f4d6db;
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, $--blue, $--green, $--pink);
+}
+
+.container {
+  height: 568px;
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@import "components/chat-form";
