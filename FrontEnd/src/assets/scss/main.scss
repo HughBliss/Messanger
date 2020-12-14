@@ -17,11 +17,8 @@ body {
   background: $--main-gradient
 }
 
-.container {
-  height: 568px;
-  width: 320px;
-  background: $--white;
-  border-radius: 15px;
+.content {
+  flex: 1;
   overflow: hidden;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -32,5 +29,16 @@ body {
   }
 }
 
+.container {
+  height: 568px;
+  width: 320px;
+  background: $--white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  //position: relative;
+}
+
 @import "components/chat-form";
 @import "components/header";
+@import "components/chat";
